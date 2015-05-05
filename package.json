@@ -1,0 +1,19 @@
+{
+  "name": "wf-logger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "dependencies": {
+    "aws-sdk": "2.1.26",
+    "lodash": "3.8.0",
+    "moment": "2.10.2",
+    "step": "0.0.5",
+    "winston": "1.0.0",
+    "winston-papertrail": "1.0.1"
+  },
+  "dev-dependencies": {
+    "should": "^6.0.1",
+    "sinon": "^1.14.1"
+  }
+}

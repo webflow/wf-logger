@@ -1,0 +1,21 @@
+{
+  "asi": false,
+  "boss": true,
+  "browser": true,
+  "eqnull": true,
+  "expr": true,
+  "loopfunc": true,
+  "strict": false,
+  "undef": true,
+  "smarttabs": true,
+  "supernew": true,
+  "sub": true,
+  "laxcomma": true,
+  "node": true,
+  "devel": true,
+  "globals": {
+
+    "name": null,
+    "top": null
+  }
+}
