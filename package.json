@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "author": "",
+  "scripts": {
+    "test": "mocha -t 10000 --reporter list test"
+  },
   "dependencies": {
     "aws-sdk": "2.1.26",
     "lodash": "3.8.0",
