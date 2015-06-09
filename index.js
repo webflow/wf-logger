@@ -2,7 +2,17 @@ var _ = require('lodash'),
     moment = require('moment'),
     winston = require('winston');
 
+/**
+ * configure
+ *    - Sets up the logging transports
+ * @return {Object} - lib.logger
+ */
 var configure = function(config) {
+  console.log('===============================================================================');
+  console.log('Initializing wf-logger');
+  console.log('Config options:', config);
+  console.log('===============================================================================');
+  
   var options = {
     level: 'info'
   };
@@ -37,11 +47,12 @@ var configure = function(config) {
 
     transports.push(new (winston.transports.File)({ level: options.level, timestamp: moment().format('YYYY-MM-DD HH:MM:ss.SSS'), filename: filename, json: false }));
   }
+ 
+  // First sets up basic loggers: debug, info, warn, error
+  var logger = require('./lib/loggers')(options, new winston.Logger({ transports: transports }));
 
-  logger = new winston.Logger({ transports: transports });
-  logger.info("Logging enabled. Level:[%s] Location:[%s] Transports:[%d]", options.level, options.path, transports.length);
-  
-  return require('./lib/loggers')(options, logger);
+  // Then appends the higher level logging helper functions (such as alert) which are reliant on the basic functions to work
+  return require('./lib/loggerHelper')(options, logger);
 };
 
 module.exports = function(options) {
