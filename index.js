@@ -8,11 +8,6 @@ var _ = require('lodash'),
  * @return {Object} - lib.logger
  */
 var configure = function(config) {
-  console.log('===============================================================================');
-  console.log('Initializing wf-logger');
-  console.log('Config options:', config);
-  console.log('===============================================================================');
-  
   var options = {
     level: 'info'
   };
