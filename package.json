@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "author": "",
+  "repository": "webflow/wf-logger",
   "scripts": {
     "test": "mocha -t 10000 --reporter list test"
   },
