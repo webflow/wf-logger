@@ -20,14 +20,15 @@ var configure = function(config) {
     require('winston-papertrail');
 
     var papertrailConfig = {
+      host: options.papertrail.host,
+      port: options.papertrail.port,      
       logFormat: function(level, message) {
         return '[' + level + '] ' + message;
       }
     };
 
-    _.assign(papertrailConfig, options.papertrail);
-
-    transports.push(winston.transports.Papertrail(papertrailConfig));
+    var papertrail = new winston.transports.Papertrail(papertrailConfig);
+    transports.push(papertrail);
   }
 
   if (options.console) { // Dev environment will hit stdout
@@ -42,7 +43,7 @@ var configure = function(config) {
 
     transports.push(new (winston.transports.File)({ level: options.level, timestamp: moment().format('YYYY-MM-DD HH:MM:ss.SSS'), filename: filename, json: false }));
   }
- 
+
   // First sets up basic loggers: debug, info, warn, error
   var logger = require('./lib/loggers')(options, new winston.Logger({ transports: transports }));
 
