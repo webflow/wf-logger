@@ -16,7 +16,7 @@
     "winston": "1.0.0",
     "winston-papertrail": "1.0.1"
   },
-  "dev-dependencies": {
+  "devDependencies": {
     "should": "^6.0.1",
     "sinon": "^1.14.1"
   }
