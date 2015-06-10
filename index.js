@@ -21,7 +21,8 @@ var configure = function(config) {
 
     var papertrailConfig = {
       host: options.papertrail.host,
-      port: options.papertrail.port,      
+      port: options.papertrail.port,
+      program: options.papertrail.program || 'default',
       logFormat: function(level, message) {
         return '[' + level + '] ' + message;
       }
