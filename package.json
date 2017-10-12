@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "aws-sdk": "2.1.26",
-    "debug": "2.2.0",
+    "debug": "2.6.9",
     "lodash": "3.8.0",
-    "moment": "2.10.2",
+    "moment": "2.15.2",
     "step": "0.0.5",
     "winston": "1.0.0",
     "winston-papertrail": "1.0.1"
